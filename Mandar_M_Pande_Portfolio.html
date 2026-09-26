@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandar M. Pande | Executive Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b1220;
+      --ink2: #182235;
+      --text: #46566d;
+      --muted: #748197;
+      --line: #dfe5ee;
+      --surface: #f5f7fa;
+      --blue: #2563eb;
+      --blueSoft: #eff6ff;
+      --green: #059669;
+      --greenSoft: #ecfdf5;
+      --white: #fff;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -.03em;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 22px;
+      font-size: .82rem;
+      font-weight: 650;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+    }
+
+    .navlinks a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 82px 0 70px;
+      background: radial-gradient(circle at 85% 10%, #eaf2ff 0, transparent 30%), linear-gradient(180deg, #fbfdff, #fff);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--greenSoft);
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      font-size: .76rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: .98;
+      letter-spacing: -.07em;
+      color: var(--ink);
+      max-width: 900px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 1.25rem;
+      color: var(--blue);
+      font-weight: 750;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy {
+      font-size: 1.08rem;
+      max-width: 800px;
+      color: #4a5b72;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 26px;
+    }
+
+    .tag {
+      padding: 8px 11px;
+      border: 1px solid #d5deea;
+      border-radius: 9px;
+      background: #fff;
+      color: #334155;
+      font-size: .78rem;
+      font-weight: 650;
+    }
+
+    section {
+      padding: 78px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 850;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.2rem);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      color: var(--ink);
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 780px;
+      font-size: 1rem;
+      margin-bottom: 34px;
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .card.soft {
+      background: var(--surface);
+    }
+
+    .card h3 {
+      font-size: 1.02rem;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: .9rem;
+    }
+
+    .number {
+      color: var(--blue);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+
+    .callout {
+      margin-top: 28px;
+      padding: 27px 30px;
+      border-left: 4px solid var(--blue);
+      background: var(--blueSoft);
+      border-radius: 0 15px 15px 0;
+    }
+
+    .callout strong {
+      color: var(--ink);
+    }
+
+    .case {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 35px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .case:first-of-type {
+      border-top: 0;
+    }
+
+    .case-label {
+      font-size: .73rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--blue);
+      font-weight: 850;
+    }
+
+    .case h3 {
+      font-size: 1.22rem;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .case p {
+      font-size: .91rem;
+      margin-bottom: 12px;
+    }
+
+    .case ul {
+      padding-left: 18px;
+      font-size: .88rem;
+    }
+
+    .case li {
+      margin: 5px 0;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .principle {
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .principle h3 {
+      color: var(--ink);
+      font-size: .98rem;
+      margin-bottom: 8px;
+    }
+
+    .principle p {
+      font-size: .85rem;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .step {
+      padding: 21px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .step span {
+      font-size: .7rem;
+      color: var(--blue);
+      font-weight: 850;
+    }
+
+    .step h3 {
+      font-size: .92rem;
+      color: var(--ink);
+      margin: 7px 0;
+    }
+
+    .step p {
+      font-size: .8rem;
+    }
+
+    .quote {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: var(--ink);
+      font-weight: 650;
+      max-width: 850px;
+      padding-left: 24px;
+      border-left: 3px solid var(--blue);
+    }
+
+    .contact {
+      background: var(--ink);
+      color: #d8e2ef;
+      border-radius: 22px;
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .contact p {
+      font-size: .9rem;
+      color: #aebbd0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 10px 14px;
+      border: 1px solid #3b4a60;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 750;
+    }
+
+    .button:hover {
+      border-color: #718096;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    @media(max-width: 850px) {
+      .grid2, .principles {
+        grid-template-columns: 1fr 1fr;
+      }
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+      .case {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    @media(max-width: 650px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+      .navlinks a:not(:last-child) {
+        display: none;
+      }
+      .hero {
+        padding: 55px 0;
+      }
+      .grid2, .principles, .flow {
+        grid-template-columns: 1fr;
+      }
+      .case {
+        padding: 24px 0;
+      }
+      .contact {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px;
+      }
+      section {
+        padding: 58px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="container nav">
+      <a class="brand" href="#">Mandar M. Pande</a>
+      <nav class="navlinks">
+        <a href="#story">Profile</a>
+        <a href="#approach">Approach</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#innovation">Innovation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow"><span class="dot"></span> Executive Portfolio | Enterprise Technology Leadership</div>
+      <h1>Building clarity across complex enterprise technology.</h1>
+      <div class="hero-title">Senior IT Programme Manager focused on enterprise platforms, digital transformation and manufacturing IT.</div>
+      <p class="hero-copy">
+        I operate at the intersection of business ownership, technology delivery and enterprise governance, helping complex programmes move from fragmented requirements and dependencies to controlled execution and measurable readiness.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">Enterprise Platforms</span>
+        <span class="tag">Programme Leadership</span>
+        <span class="tag">Manufacturing IT</span>
+        <span class="tag">Digital Workflow Transformation</span>
+        <span class="tag">Governance</span>
+        <span class="tag">Technical Product Ownership</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="story">
+      <div class="container">
+        <div class="kicker">Beyond the CV</div>
+        <h2>The perspective behind the experience.</h2>
+        <p class="intro">
+          My career has given me two complementary views of enterprise technology: first as an implementation and consulting professional delivering platforms for industrial clients, and later as a client-side owner responsible for the platform, its users, governance and evolution.
+        </p>
+        <div class="grid2">
+          <div class="card">
+            <div class="number">01 / IMPLEMENTATION PERSPECTIVE</div>
+            <h3>I understand how platforms are actually built.</h3>
+            <p>Years on the implementation side created a practical understanding of solution design, configuration, technical dependencies, stakeholder workshops, adoption and the constraints delivery teams face.</p>
+          </div>
+          <div class="card">
+            <div class="number">02 / CLIENT-SIDE PERSPECTIVE</div>
+            <h3>I understand what the business expects after implementation.</h3>
+            <p>Client-side ownership shifted the focus from simply delivering a solution to governing its lifecycle: priorities, risks, users, releases, operational dependencies, business readiness and executive decisions.</p>
+          </div>
+        </div>
+        <div class="callout"><strong>The resulting perspective:</strong> I can translate between business intent, delivery reality and technical constraints without treating them as separate conversations.</div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container">
+        <div class="kicker">Operating model</div>
+        <h2>How I approach complex programmes.</h2>
+        <p class="intro">My focus is not simply activity tracking. It is creating enough structure and transparency for different teams to make decisions at the right time.</p>
+        <div class="principles">
+          <div class="principle">
+            <h3>1. Make the intake executable</h3>
+            <p>Clarify what is entering delivery, what is missing and what decisions are required before work begins.</p>
+          </div>
+          <div class="principle">
+            <h3>2. Make dependencies visible</h3>
+            <p>Connect application, infrastructure, security, data, business and vendor dependencies rather than managing them as isolated workstreams.</p>
+          </div>
+          <div class="principle">
+            <h3>3. Create decision transparency</h3>
+            <p>Give stakeholders a shared view of risks, readiness, ownership and escalation rather than relying on status reporting alone.</p>
+          </div>
+          <div class="principle">
+            <h3>4. Protect delivery quality</h3>
+            <p>Use readiness criteria, testing discipline and structured defect resolution to reduce avoidable late-cycle surprises.</p>
+          </div>
+          <div class="principle">
+            <h3>5. Stay technically credible</h3>
+            <p>Understand enough of the technical landscape to challenge assumptions, coordinate specialists and make informed delivery decisions.</p>
+          </div>
+          <div class="principle">
+            <h3>6. Design for adoption</h3>
+            <p>A successful enterprise change is not only technically released; users, governance and operational ownership must be ready.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <div class="kicker">Selected situations</div>
+        <h2>How I have operated in real enterprise environments.</h2>
+        <p class="intro">These are deliberately presented as business situations rather than repeating the bullet points of the resume.</p>
+
+        <article class="case">
+          <div class="case-label">Case 01<br>Platform modernisation</div>
+          <div>
+            <h3>When an enterprise platform upgrade is also an operating-model change.</h3>
+            <p>An ALM upgrade is rarely just a version change. Application compatibility, Java migration, database and infrastructure changes, security configuration, business testing, release sequencing and stakeholder readiness become interconnected.</p>
+            <ul>
+              <li>My role is to connect the technical work with the business readiness needed for the release.</li>
+              <li>The programme requires continuous coordination across multiple specialist domains rather than a single delivery team.</li>
+              <li>The management view therefore needs to show dependencies, risks and readiness, not only completed tasks.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-label">Case 02<br>Workflow transformation</div>
+          <div>
+            <h3>Turning governance-heavy manual processes into controlled digital workflows.</h3>
+            <p>In enterprise environments, approval processes often sit at the intersection of business policy, auditability, user behaviour and technology. Digitisation therefore changes more than the form users complete.</p>
+            <ul>
+              <li>Understand the existing process and the governance intent behind it.</li>
+              <li>Translate the process into structured workflow behaviour and clear ownership.</li>
+              <li>Work with business stakeholders through validation, testing, adoption and handover.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-label">Case 03<br>Client-side ownership</div>
+          <div>
+            <h3>Moving from delivery partner to platform owner changes the question.</h3>
+            <p>As an implementation partner, the question is often "Can we deliver this?" As a client-side owner, the question becomes broader: "Should we do this, when, with what risk, and what will the organisation need to operate it successfully?"</p>
+            <ul>
+              <li>Balance business priorities against technical and operational constraints.</li>
+              <li>Maintain continuity between platform evolution and user needs.</li>
+              <li>Create a common delivery language across business, technology and vendors.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="container">
+        <div class="kicker">Leadership philosophy</div>
+        <h2>What I believe good enterprise delivery leadership looks like.</h2>
+        <div class="quote">
+          "The programme manager should reduce ambiguity for everyone else, not by owning every decision, but by making the right information, ownership, dependencies and decisions visible at the right time."
+        </div>
+
+        <div class="flow">
+          <div class="step">
+            <span>01</span>
+            <h3>Understand</h3>
+            <p>Establish the business outcome and the real constraint.</p>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <h3>Structure</h3>
+            <p>Turn ambiguity into ownership, scope, dependencies and readiness.</p>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <h3>Coordinate</h3>
+            <p>Connect specialist teams and business stakeholders around shared decisions.</p>
+          </div>
+          <div class="step">
+            <span>04</span>
+            <h3>Deliver</h3>
+            <p>Maintain transparency through release, adoption and operational handover.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="innovation">
+      <div class="container">
+        <div class="kicker">AI & modernisation</div>
+        <h2>Exploring practical AI for enterprise modernisation.</h2>
+        <div class="grid2">
+          <div class="card soft">
+            <h3>AI-assisted legacy analysis POC</h3>
+            <p>I designed and piloted a local proof of concept using Docker and Ollama to analyse legacy enterprise code and generate modernisation recommendations.</p>
+          </div>
+          <div class="card">
+            <h3>Why I built it</h3>
+            <p>The objective was not to become an AI engineer. It was to explore how emerging AI capabilities could help technology leaders understand legacy estates, identify modernisation opportunities and support better early-stage decisions.</p>
+          </div>
+        </div>
+        <div class="callout"><strong>Product leadership perspective:</strong> I am interested in AI where it can reduce enterprise complexity, improve decision quality or accelerate technology modernisation, not simply because AI is available.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="kicker">International context</div>
+        <h2>Built in global industrial environments.</h2>
+        <div class="grid2">
+          <div class="card">
+            <h3>European stakeholder exposure</h3>
+            <p>Experience supporting enterprise operations involving Switzerland, Spain and broader European stakeholders, including Steering Committee alignment in Zurich.</p>
+          </div>
+          <div class="card">
+            <h3>Germany relocation</h3>
+            <p>German Chancenkarte holder and actively learning German, with a professional focus on enterprise technology, manufacturing and digital transformation in Europe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <div>
+            <h2>Let's discuss enterprise technology.</h2>
+            <p>Open to conversations around enterprise platforms, digital transformation, programme leadership and manufacturing IT.</p>
+          </div>
+          <div class="buttons">
+            <a class="button" href="mailto:tomandarpande@gmail.com">Email</a>
+            <a class="button" href="https://linkedin.com/in/mandarmpande" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Mandar M. Pande | Executive Portfolio | Enterprise Technology & Programme Leadership</footer>
+</body>
+</html>
+
+```
